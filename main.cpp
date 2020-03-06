@@ -5,6 +5,7 @@
 #include <cmath>
 #include <ctime>
 
+
 using namespace std;
 
 struct circle
@@ -12,6 +13,16 @@ struct circle
     double radius = {};
     pair<double, double> center;
 };
+
+void circlePrint(circle krug)
+{
+    double circleP = krug.radius * 2 * 3.1415;
+    double circleA = krug.radius * 3.1415 * 3.1415;
+    cout << "Krug radius: " << krug.radius << endl;
+    cout << "Krug center: " << krug.center.first << " " << krug.center.second << endl;
+    cout << "Krug perimetr: " << circleP << endl;
+    cout << "Krug area: " << circleA << endl;
+}
 
 void triangleLenght(double &a, double &b, double &c, vector< pair<double, double> > triangle)
 {
@@ -87,8 +98,9 @@ int main()
         krug.radius = coord[2];
         krug.center.first = coord[0];
         krug.center.second = coord[1];
+        circlePrint(krug);
     }
-    if (fgname == "triangle")
+    else if (fgname == "triangle")
     {
         triangle[0] = make_pair(coord[0], coord[1]);
         triangle[1] = make_pair(coord[2], coord[3]);
@@ -97,8 +109,7 @@ int main()
         triangleLenght(a, b, c, triangle);
         trianglePrint(a, b, c);
     }
-    /*for (auto& w : triangle) cout << w.first << ' ' << w.second << endl;*/
-    cout << "Krug radius: " << krug.radius << endl;
-    cout << "Krug center: " << krug.center.first << " " << krug.center.second << endl;
+
 }
+
 
