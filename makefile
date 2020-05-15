@@ -1,7 +1,7 @@
 .PHONY: clean all
 CC = g++
 CXXFLAGS = -Wall -Werror --std=c++17
-EXE = bin/geom
+EXE = bin/GeometrySharp
 TESTS = bin/test
 DIR_SRC = build/src
 DIR_TEST = build/test
