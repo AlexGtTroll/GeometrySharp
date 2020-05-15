@@ -1,5 +1,5 @@
-#include "function.h"
 #include "CoordPrinter.h"
+#include "function.h"
 #include <gtest/gtest.h>
 
 TEST(PERIMETER, PerimeterCorrect)
