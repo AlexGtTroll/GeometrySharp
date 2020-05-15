@@ -12,20 +12,20 @@ CXX += -g -Wall -Wextra -pthread -std=c++17
 
 all: $(EXE) $(TESTS)
 
-$(EXE): $(DIR_SRC)/main.o $(DIR_SRC)/printCoord.o $(DIR_SRC)/func.o
-	$(CC) $(CXXFLAGS) $(DIR_SRC)/main.o $(DIR_SRC)/printCoord.o $(DIR_SRC)/func.o -o $(EXE)
+$(EXE): $(DIR_SRC)/main.o $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o
+	$(CC) $(CXXFLAGS) $(DIR_SRC)/main.o $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o -o $(EXE)
 
 $(DIR_SRC)/main.o: src/main.cpp
 	$(CC) $(CXXFLAGS) -c src/main.cpp -o $(DIR_SRC)/main.o
 
-$(DIR_SRC)/printCoord.o: src/printCoord.cpp
-	$(CC) $(CXXFLAGS) -c src/printCoord.cpp -o $(DIR_SRC)/printCoord.o
+$(DIR_SRC)/CoordPrinter.o: src/CoordPrinter.cpp
+	$(CC) $(CXXFLAGS) -c src/CoordPrinter.cpp -o $(DIR_SRC)/CoordPrinter.o
 
-$(DIR_SRC)/func.o: src/func.cpp
-	$(CC) $(CXXFLAGS) -c src/func.cpp -o $(DIR_SRC)/func.o
+$(DIR_SRC)/function.o: src/function.cpp
+	$(CC) $(CXXFLAGS) -c src/function.cpp -o $(DIR_SRC)/function.o
 
-$(TESTS) : $(DIR_SRC)/printCoord.o $(DIR_SRC)/func.o $(DIR_TEST)/test.o
-	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_SRC)/printCoord.o $(DIR_SRC)/func.o  $(DIR_TEST)/test.o -o $(TESTS)
+$(TESTS) : $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o $(DIR_TEST)/test.o
+	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o  $(DIR_TEST)/test.o -o $(TESTS)
 
 $(DIR_TEST)/test.o: test/test.cpp
 	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I src -c test/test.cpp -o $(DIR_TEST)/test.o
