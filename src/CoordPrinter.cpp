@@ -1,4 +1,4 @@
-﻿#include "CoordPrinter.h"
+#include "CoordPrinter.h"
 
 using namespace std;
 
@@ -15,8 +15,7 @@ bool Coord(string str, float& x, float& y, float& r)
         if (str[L + 1] == '-') {
             strX += str[L + 1];
             i = L + 2;
-        }
-        else {
+        } else {
             i = L + 1;
         }
         int o = 0;
@@ -30,16 +29,14 @@ bool Coord(string str, float& x, float& y, float& r)
                     return false;
                 }
 
-            }
-            else {
+            } else {
                 return false;
             }
         }
         if (str[space + 1] == '-') {
             strY += str[space + 1];
             i = space + 2;
-        }
-        else {
+        } else {
             i = space + 1;
         }
         o = 0;
@@ -53,8 +50,7 @@ bool Coord(string str, float& x, float& y, float& r)
                     return false;
                 }
 
-            }
-            else {
+            } else {
                 return false;
             }
         }
@@ -69,13 +65,11 @@ bool Coord(string str, float& x, float& y, float& r)
                     return false;
                 }
 
-            }
-            else {
+            } else {
                 return false;
             }
         }
-    }
-    else {
+    } else {
         return false;
     }
     x = stof(strX);
