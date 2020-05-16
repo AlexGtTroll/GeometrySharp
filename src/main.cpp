@@ -18,8 +18,7 @@ int main()
         cout << "x = " << x << ", y = " << y << ", r = " << r;
 
         cout << "\nS: " << S(r) << "\nP: " << P(r) << endl;
-    }
-    else {
+    } else {
         cout << "Error";
     }
     return 0;
